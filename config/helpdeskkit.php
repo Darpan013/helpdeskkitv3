@@ -6,6 +6,7 @@ return [
     'theme_mode' => ThemeMode::Light,
     'guest_panel_enabled' => true,
     'admin_panel_enabled' => true,
+    'operator_panel_enabled' => true,
     'app_panel_enabled' => true,
     'favicon' => [
         'enabled' => true,

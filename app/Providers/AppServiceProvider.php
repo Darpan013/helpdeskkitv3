@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\Filament\AppPanelProvider;
 use App\Providers\Filament\GuestPanelProvider;
+use App\Providers\Filament\OperatorPanelProvider;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\View\View;
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
     {
         if (config('helpdeskkit.admin_panel_enabled', false)) {
             $this->app->register(AdminPanelProvider::class);
+        }
+        if (config('helpdeskkit.operator_panel_enabled', false)) {
+            $this->app->register(OperatorPanelProvider::class);
         }
         if (config('helpdeskkit.app_panel_enabled', false)) {
             $this->app->register(AppPanelProvider::class);

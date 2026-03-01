@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Observers\UserObserver;
 use Filament\Models\Contracts\FilamentUser;
+use JeffersonGoncalves\HelpDesk\Concerns\HasTickets;
 use Filament\Panel;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;
@@ -54,6 +55,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     use Authorizable;
     use CanResetPassword;
     use HasFactory;
+    use HasTickets;
     use MustVerifyEmail;
     use Notifiable;
 

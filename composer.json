@@ -19,6 +19,7 @@
         "achyutn/filament-log-viewer": "^0.5",
         "dutchcodingcompany/filament-developer-logins": "^1.10",
         "filament/filament": "^3.3",
+        "jeffersongoncalves/filament-help-desk": "1.0",
         "jeffersongoncalves/filament-logo": "^1.0",
         "joaopaulolndev/filament-edit-profile": "*",
         "laravel/framework": "^12.0",
