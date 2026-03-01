@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98ff2667392420616370c3d42ea70b1b",
+    "content-hash": "34c4246cfd417a904f4aaf3bf9f8597f",
     "packages": [
         {
             "name": "achyutn/filament-log-viewer",
@@ -2209,16 +2209,16 @@
         },
         {
             "name": "jeffersongoncalves/filament-help-desk",
-            "version": "1.0.0",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffersongoncalves/filament-help-desk.git",
-                "reference": "a78c384ad97fec44cd4008d13b74e91e6ca5aa4f"
+                "reference": "9d93fef325355f6403cdfd137cdb249967ae5333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-help-desk/zipball/a78c384ad97fec44cd4008d13b74e91e6ca5aa4f",
-                "reference": "a78c384ad97fec44cd4008d13b74e91e6ca5aa4f",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-help-desk/zipball/9d93fef325355f6403cdfd137cdb249967ae5333",
+                "reference": "9d93fef325355f6403cdfd137cdb249967ae5333",
                 "shasum": ""
             },
             "require": {
@@ -2270,9 +2270,9 @@
                 "tickets"
             ],
             "support": {
-                "source": "https://github.com/jeffersongoncalves/filament-help-desk/tree/1.0.0"
+                "source": "https://github.com/jeffersongoncalves/filament-help-desk/tree/1.1.6"
             },
-            "time": "2026-02-04T04:43:30+00:00"
+            "time": "2026-02-07T21:36:47+00:00"
         },
         {
             "name": "jeffersongoncalves/filament-logo",
