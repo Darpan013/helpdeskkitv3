@@ -1,4 +1,4 @@
-name: filakit
+name: helpdeskkit
 php: '8.2'
 secured: true
 aliases: {  }
